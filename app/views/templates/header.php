@@ -22,6 +22,9 @@
                     <a class="nav-item nav-link active" href="<?= BASEURL; ?>">Home <span
                             class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="<?= BASEURL; ?>/siswa">Siswa</a>
+                    <a class="nav-item nav-link" href="<?= BASEURL; ?>/jurusan">Jurusan</a>
+                    <a class="nav-item nav-link" href="<?= BASEURL; ?>/kelas">Kelas</a>
+                    <a class="nav-item nav-link" href="<?= BASEURL; ?>/guru">Guru</a>
                     <a class="nav-item nav-link" href="<?= BASEURL; ?>/about">About</a>
                 </div>
             </div>

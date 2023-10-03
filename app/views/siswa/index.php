@@ -8,7 +8,8 @@
 
     <div class="row mb-3">
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary tombolTambahData" data-toggle="modal" data-target="#forModal">
+            <button type="button" class="btn btn-primary tombolTambahDataSiswa" data-toggle="modal"
+                data-target="#forModal">
                 Tambah Data Siswa
             </button>
         </div>
@@ -37,7 +38,7 @@
                         <?= $siswa['nama']; ?>
                         <a class="badge badge-danger float-right ml-1" onclick="return confirm('Yakin?');"
                             href="<?= BASEURL; ?>/siswa/hapus/<?= $siswa['id']; ?>">Hapus</a>
-                        <a class="badge badge-success float-right ml-1 tampilModalUbah"
+                        <a class="badge badge-success float-right ml-1 tampilModalUbahSiswa"
                             href="<?= BASEURL; ?>/siswa/ubah/<?= $siswa['id']; ?>" data-toggle="modal"
                             data-target="#forModal" data-id="<?= $siswa['id']; ?>">Ubah</a>
                         <a class="badge badge-primary float-right ml-1"
@@ -50,8 +51,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="forModal" tabindex="-1" role="dialog" aria-labelledby="judulModal" Tambah Data
-    Siswadden="true">
+<div class="modal fade" id="forModal" tabindex="-1" role="dialog" aria-labelledby="judulModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -74,21 +74,29 @@
                     <div class="form-group">
                         <label for="kelas">Kelas</label>
                         <select id="kelas" name="kelas" class="form-control">
-                            <option selected>Pilih...</option>
-                            <option>X</option>
+                            <option selected></option>
+                            <?php foreach ($data['kelas'] as $kelas): ?>
+                                <option value="<?= $kelas['nama_kelas']; ?>"><?= $kelas['nama_kelas']; ?></option>
+                            <?php endforeach; ?>
+
+                            <!-- <option>X</option>
                             <option>XI</option>
-                            <option>XII</option>
+                            <option>XII</option> -->
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="jurusan">Jurusan</label>
                         <select id="jurusan" name="jurusan" class="form-control">
-                            <option selected>Pilih...</option>
-                            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                            <option selected></option>
+                            <?php foreach ($data['jurusan'] as $jurusan): ?>
+                                <option value="<?= $jurusan['nama_jurusan']; ?>"><?= $jurusan['nama_jurusan']; ?></option>
+                            <?php endforeach; ?>
+
+                            <!-- <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
                             <option value="Akuntansi">Akuntansi</option>
                             <option value="Bisnis Retail">Bisnis Retail</option>
                             <option value="Manajemen Perkantora">Manajemen Perkantoran</option>
-                            <option value="Desain Komunikasi Visual">Desain Komunikasi Visual</option>
+                            <option value="Desain Komunikasi Visual">Desain Komunikasi Visual</option> -->
                         </select>
                     </div>
             </div>
